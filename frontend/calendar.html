@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Availability | Dove Nest</title>
+    <link rel="stylesheet" href="css/dove-nest.css">
+    <style>
+        /* Specific Calendar Styling injected for modularity */
+        .calendar-container {
+            padding: 8rem 2rem 4rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            color: var(--accent-blue-green);
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+        .day-name {
+            font-weight: bold;
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        .calendar-cell {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .calendar-cell.available {
+            color: var(--accent-blue-green);
+            cursor: pointer;
+        }
+        .calendar-cell.available:hover {
+            background: var(--accent-blue-green);
+            color: var(--bg-dark);
+            transform: scale(1.05);
+        }
+        .calendar-cell.booked {
+            background: rgba(255, 50, 50, 0.1);
+            color: #ff4c4c;
+            border-color: rgba(255, 50, 50, 0.2);
+            text-decoration: line-through;
+            cursor: not-allowed;
+        }
+        .legend {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .dot.avail { background: var(--accent-blue-green); }
+        .dot.unavail { background: #ff4c4c; }
+    </style>
+</head>
+<body>
+    <nav class="glass-nav">
+        <a href="index.html" class="logo" style="color: var(--text-light); text-decoration: none;">Dove Nest</a>
+        <div class="nav-links">
+            <a href="index.html" class="haptic-btn">Home</a>
+        </div>
+    </nav>
+
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <button id="prevMonth" class="wa-book-btn haptic-btn">&lt;</button>
+            <h2 id="monthYear">June 2026</h2>
+            <button id="nextMonth" class="wa-book-btn haptic-btn">&gt;</button>
+        </div>
+        
+        <div class="calendar-grid" id="calendarGrid">
+            <!-- Day Names -->
+            <div class="day-name">Sun</div><div class="day-name">Mon</div>
+            <div class="day-name">Tue</div><div class="day-name">Wed</div>
+            <div class="day-name">Thu</div><div class="day-name">Fri</div>
+            <div class="day-name">Sat</div>
+            <!-- Days injected via JS/Java Service -->
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><div class="dot avail"></div> Available</div>
+            <div class="legend-item"><div class="dot unavail"></div> Booked</div>
+        </div>
+    </div>
+
+    <script>
+        // Frontend script to simulate fetching from the Java Calendar Service
+        document.addEventListener("DOMContentLoaded", () => {
+            const calendarGrid = document.getElementById('calendarGrid');
+            const bookedDates = [5, 12, 13, 19, 20, 26]; // To be replaced by Java backend data
+
+            for (let i = 1; i <= 30; i++) {
+                const cell = document.createElement('div');
+                cell.textContent = i;
+                if (bookedDates.includes(i)) {
+                    cell.className = 'calendar-cell booked';
+                } else {
+                    cell.className = 'calendar-cell available haptic-btn';
+                    cell.onclick = () => alert(`Date ${i} is available! Redirecting to WhatsApp...`);
+                }
+                calendarGrid.appendChild(cell);
+            }
+        });
+    </script>
+</body>
+          </html>
+          
