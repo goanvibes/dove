@@ -1,0 +1,182 @@
+/* Authentic Goan Vibrant Theme Palette */
+:root {
+    --goan-navy: #0B192C;        /* Rich, sophisticated base */
+    --terracotta: #E06442;       /* Traditional clay tiles & spices */
+    --ochre: #F39E3A;            /* Sun-baked Goan church walls */
+    --linen-white: #F9F7F5;      /* Pure, clean contrast text */
+    --card-bg: rgba(255, 255, 255, 0.04);
+    --border-accent: rgba(243, 158, 58, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif; /* Elegant, classic typography feel */
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--goan-navy);
+    color: var(--linen-white);
+    overflow-x: hidden;
+}
+
+/* Specific Catering Screen Loader */
+#catering-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--goan-navy);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeOut 1s ease forwards;
+    animation-delay: 1.2s;
+}
+
+#catering-loader h2 {
+    color: var(--ochre);
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+
+/* Navigation System */
+.goan-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: rgba(11, 25, 44, 0.9);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--terracotta);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--ochre);
+}
+
+.nav-links a {
+    color: var(--linen-white);
+    text-decoration: none;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    font-family: sans-serif;
+}
+
+.back-nest {
+    color: var(--ochre) !important;
+    border: 1px solid var(--ochre);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* Hero Section layout */
+.goan-hero {
+    height: 70vh;
+    background: linear-gradient(rgba(11, 25, 44, 0.6), var(--goan-navy));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.goan-hero h1 {
+    font-size: 3rem;
+    color: var(--ochre);
+    margin-bottom: 1rem;
+}
+
+.cta-terracotta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: var(--terracotta);
+    color: var(--linen-white);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(224, 100, 66, 0.4);
+}
+
+/* Form Styling for Mobile First Design */
+.section-padding {
+    padding: 4rem 1.5rem;
+}
+
+.menu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-accent);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.menu-card h3 {
+    color: var(--ochre);
+    margin-bottom: 1rem;
+}
+
+.menu-card ul {
+    list-style-type: square;
+    padding-left: 1.2rem;
+    line-height: 1.8;
+}
+
+.goan-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--ochre);
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-accent);
+    color: #fff;
+    border-radius: 6px;
+}
+
+.order-submit-btn {
+    background: var(--ochre);
+    color: var(--goan-navy);
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.order-submit-btn:active {
+    transform: scale(0.98);
+}
