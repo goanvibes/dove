@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dove Caterers | Authentic Goan Culinary Experiences</title>
+    <link rel="stylesheet" href="css/caterers.css">
+</head>
+<body>
+    <!-- Immersive Entry Overlay -->
+    <div id="catering-loader">
+        <h2>DOVE CATERERS</h2>
+        <p>A Taste of Tradition</p>
+    </div>
+
+    <!-- Navigation Hub -->
+    <nav class="goan-nav">
+        <div class="brand">Dove Caterers</div>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="#menu" class="haptic-btn">Our Menu</a>
+            <a href="#gallery" class="haptic-btn">Event Gallery</a>
+            <a href="#order" class="haptic-btn">Place Order</a>
+            <a href="index.html" class="back-nest haptic-btn">← Dove Nest</a>
+        </div>
+    </nav>
+
+    <!-- Traditional Aesthetic Hero Section -->
+    <section class="goan-hero">
+        <div class="hero-overlay">
+            <h1>Spiced by Heritage.</h1>
+            <p>Bringing generations of authentic Goan flavors and bespoke event catering directly to your celebrations.</p>
+            <a href="#menu" class="cta-terracotta haptic-btn">Explore Our Menus</a>
+        </div>
+    </section>
+
+    <!-- Menu Showcase Segment -->
+    <section id="menu" class="section-padding">
+        <h2 class="section-title">The Goan Feast</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <h3>Traditional Mains</h3>
+                <ul>
+                    <li>Goan Fish Curry Rice</li>
+                    <li>Pork Vindaloo / Sorpotel</li>
+                    <li>Chicken Xacuti / Cafreal</li>
+                    <li>Prawn Balchão</li>
+                </ul>
+            </div>
+            <div class="menu-card">
+                <h3>Heritage Breads & Sides</h3>
+                <ul>
+                    <li>Fresh Sanaas (Steamed Rice Cakes)</li>
+                    <li>Poee (Authentic Goan Bread)</li>
+                    <li>Kismur (Dried Prawn Salad)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic WhatsApp Ordering Interface -->
+    <section id="order" class="order-section section-padding">
+        <h2>Design Your Custom Event Menu</h2>
+        <p>Select your preferences below to build your instant WhatsApp order request.</p>
+        
+        <form id="cateringOrderForm" class="goan-form">
+            <div class="form-group">
+                <label for="clientName">Your Name</label>
+                <input type="text" id="clientName" required placeholder="e.g., Joseph Fernandes">
+            </div>
+            <div class="form-group">
+                <label for="eventType">Occasion</label>
+                <select id="eventType">
+                    <option value="Wedding Reception">Wedding Reception</option>
+                    <option value="Traditional Lit">Traditional Lit / Party</option>
+                    <option value="Birthday Bash">Birthday Celebration</option>
+                    <option value="Corporate Feast">Corporate Event</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="guestCount">Expected Guests</label>
+                <input type="number" id="guestCount" required min="10" placeholder="Minimum 10 guests">
+            </div>
+            <button type="submit" class="order-submit-btn haptic-btn">Generate WhatsApp Order</button>
+        </form>
+    </section>
+
+    <script src="js/catering.js"></script>
+</body>
+</html>
