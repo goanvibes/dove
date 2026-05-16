@@ -1,20 +1,21 @@
-dove-nest-platform/
+dove/
+│
+├── index.html                     # (Dove Nest Homepage - Moved to root for GitHub Pages)
 │
 ├── frontend/
-│   ├── index.html                 (Dove Nest Homepage)
-│   ├── catering.html              (Dove Caterers Homepage)
+│   ├── catering.html              # (Dove Caterers Homepage)
 │   ├── css/
-│   │   ├── dove-nest.css          (Blue-Green & Black Theme)
-│   │   └── caterers.css           (Goan Vibe Theme: Terracotta, Ochre, Navy)
+│   │   ├── dove-nest.css          # (Blue-Green & Black Theme)
+│   │   └── caterers.css           # (Goan Vibe Theme: Terracotta, Ochre, Navy)
 │   ├── ts/
-│   │   ├── main.ts                (Haptics, Animations, Routing)
-│   │   └── whatsapp-booking.ts    (WhatsApp API Logic)
-│   └── js/                        (Compiled TS files)
+│   │   ├── main.ts                # (Haptics, Animations, Routing)
+│   │   └── whatsapp-booking.ts    # (WhatsApp API Logic)
+│   └── js/                        # (Compiled TS files)
 │
 ├── backend-services/
-│   ├── php-whatsapp-gateway/      (PHP: Routes form data to WhatsApp API)
+│   ├── php-whatsapp-gateway/      # (PHP: Routes form data to WhatsApp API)
 │   │   └── process_booking.php
-│   ├── python-reviews-api/        (Python: Fetches Google Reviews)
+│   ├── python-reviews-api/        # (Python: Fetches Google Reviews)
 │   │   └── google_reviews.py
-│   └── java-calendar-service/     (Java: Manages availability calendar)
+│   └── java-calendar-service/     # (Java: Manages availability calendar)
 │       └── AvailabilityCheck.java
